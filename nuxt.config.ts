@@ -4,5 +4,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   devServer: {
     port: 5002
-  }
+  },
+  extends: [
+    ['github:dikshit-n/mf-core-nlr#master', { install: true }]
+  ]
 })
