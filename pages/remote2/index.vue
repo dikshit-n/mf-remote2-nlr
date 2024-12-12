@@ -3,6 +3,8 @@
 </template>
 
 <script setup lang="ts">
+const { $moduleConfig } = useNuxtApp();
+console.log($moduleConfig, 'config from remote 2')
 definePageMeta({
   layout: 'base'
 })
