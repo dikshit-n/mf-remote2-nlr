@@ -12,6 +12,8 @@
 
 <script setup>
 import { ref } from 'vue';
+import DataTable from 'primevue/datatable';
+import Column from 'primevue/column';
 
 const data = ref([
   {
