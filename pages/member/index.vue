@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({
-  layout: 'base'
-})
+  definePageMeta({
+    layout: 'base'
+  })
 </script>
