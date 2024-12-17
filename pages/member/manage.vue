@@ -34,7 +34,6 @@ import InputText from "primevue/inputtext";
 import IconField from "primevue/iconfield";
 import InputIcon from "primevue/inputicon";
 import AppTable from "@/components/AppTable.vue";
-import { eventBus } from "@/utils/eventBus";
 definePageMeta({
   layout: "base",
 });
