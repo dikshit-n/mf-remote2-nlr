@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, watchEffect } from 'vue';
 import Button from "primevue/button";
 import InputText from "primevue/inputtext";
 import IconField from "primevue/iconfield";
@@ -52,6 +52,12 @@ onMounted(() => {
 // Cleanup subscription on unmount
 onUnmounted(() => {
   //subscription.unsubscribe();
+});
+
+watchEffect(() => {
+  if (eventPayload.value) {
+    console.log("EventPayload updated:", eventPayload.value);
+  }
 });
 </script>
 
