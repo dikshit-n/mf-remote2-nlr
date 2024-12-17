@@ -2,13 +2,13 @@
   <div class="page-container">
     <div class="header">
       <h3>Members Management</h3>
-      <!-- <div class="target-container">
+      <div class="target-container">
         <h3>Listening for Events</h3>
         <p v-if="eventPayload">
           {{ eventPayload.message }} (Count: {{ eventPayload.servicesCount }})
         </p>
         <p v-else>No events received yet.</p>
-      </div> -->
+      </div>
       <div class="actions">
         <IconField>
           <InputIcon class="pi pi-search" />
@@ -37,20 +37,20 @@ import AppTable from "@/components/AppTable.vue";
 definePageMeta({
   layout: "base",
 });
-// const eventPayload = ref<any>(null);
-// let subscription: any;
+const eventPayload = ref<any>(null);
+let subscription: any;
 
-// onMounted(() => {
-//   subscription = eventBus.on("serviceEvent", (payload: any) => {
-//     console.log("Event Received:", payload);
-//     eventPayload.value = payload;
-//   });
-// });
+onMounted(() => {
+  subscription = eventBus.on("serviceEvent", (payload: any) => {
+    console.log("Event Received:", payload);
+    eventPayload.value = payload;
+  });
+});
 
-// // Cleanup subscription on unmount
-// onUnmounted(() => {
-//   subscription.unsubscribe();
-// });
+// Cleanup subscription on unmount
+onUnmounted(() => {
+  subscription.unsubscribe();
+});
 </script>
 
 <style scoped lang="scss">
