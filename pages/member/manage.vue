@@ -29,6 +29,7 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, ref } from 'vue';
 import Button from "primevue/button";
 import InputText from "primevue/inputtext";
 import IconField from "primevue/iconfield";
@@ -38,10 +39,11 @@ definePageMeta({
   layout: "base",
 });
 const eventPayload = ref<any>(null);
-let subscription: any;
+//let subscription: any;
 
 onMounted(() => {
-  subscription = eventBus.on("serviceEvent", (payload: any) => {
+  console.log("mounting");
+ eventBus.on("serviceEvent", (payload: any) => {
     console.log("Event Received:", payload);
     eventPayload.value = payload;
   });
@@ -49,7 +51,7 @@ onMounted(() => {
 
 // Cleanup subscription on unmount
 onUnmounted(() => {
-  subscription.unsubscribe();
+  //subscription.unsubscribe();
 });
 </script>
 
